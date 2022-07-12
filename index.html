@@ -4,31 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carousel</title>
-
-    <!-- * Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-
-    <!-- * Stylesheet -->
+    
     <link rel="stylesheet" href="css/style.css">
+    <title>Carousel</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
 
-    <div class="container">
+    <div class="container" id="root">
         <div id="carousel">
 
-            <!--  * Left button -->
             <i class="bi bi-arrow-left-circle-fill" id="prev"></i>
 
-            <!-- * Galleria immagini -->
             <div class="gallery">
+                <figure class="active">
+                    <img src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="Svezia">
+                    <figcaption>
+                    <h2>Svezia</h2>
+                    <h6>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.</h6>
+                    </figcaption>
+                    </figure>
             </div>
 
-            <!-- * Next button -->
             <i class="bi bi-arrow-right-circle-fill" id="next"></i>
         </div>
-        <div id="thumbnails"></div>
+
+        <div id="thumbnails">
+            <img v-for="(img, index) in pictures" :src="img.url" :alt="img.title" :data-index="0" class="active">
+        </div>
     </div>
 
     <script src="js/script.js"></script>
