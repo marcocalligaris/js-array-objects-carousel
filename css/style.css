@@ -1,7 +1,7 @@
 #carousel {
     height: 500px;
     width: 800px;
-    margin: 100px auto;
+    margin: 80px auto;
     position: relative;
 }
 
@@ -52,5 +52,23 @@
     left: calc(100% + 50px);
 }
 
+#thumbnails {
+    width: 800px;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#thumbnails img {
+    width: 19%;
+    height: 100%;
+    border-radius: 10px;
+    filter: grayscale(1);
+}
+
+#thumbnails img.active {
+    filter: grayscale(0);
+}
 
 
