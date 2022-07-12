@@ -19,11 +19,11 @@
             <i class="bi bi-arrow-left-circle-fill" id="prev"></i>
 
             <div class="gallery">
-                <figure class="active">
-                    <img src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="Svezia">
+                <figure v-for="(img, index) in pictures" :class="{'active' : currentIndex === index}">
+                    <img :src="img.url" :alt="img.title">
                     <figcaption>
-                    <h2>Svezia</h2>
-                    <h6>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.</h6>
+                    <h2>{{ img.title }}</h2>
+                    <h6>{{ img.description }}</h6>
                     </figcaption>
                     </figure>
             </div>
@@ -32,7 +32,7 @@
         </div>
 
         <div id="thumbnails">
-            <img v-for="(img, index) in pictures" :src="img.url" :alt="img.title" :data-index="0" class="active">
+            <img v-for="(img, index) in pictures" :src="img.url" :alt="img.title" :class="{'active' : currentIndex === index}">
         </div>
     </div>
 

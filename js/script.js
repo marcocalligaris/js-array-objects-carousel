@@ -1,6 +1,7 @@
 const root = new Vue ({
   el: '#root',
   data: {
+    currentIndex: 0,
     pictures: [
       {
         url: 'http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg',
@@ -35,7 +36,6 @@ const root = new Vue ({
           'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.',
       },
     ]
-    
   },
   methods:{
 
