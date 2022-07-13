@@ -38,6 +38,17 @@ const root = new Vue ({
     ]
   },
   methods:{
-
+    goNext(){
+      this.currentIndex++;
+      if (this.currentIndex === this.pictures.length) {
+        this.currentIndex = 0;
+      }
+    },
+    goPrev(){
+      this.currentIndex--;
+      if (this.currentIndex < 0) {
+        this.currentIndex = this.pictures.length - 1;
+      }
+    }
   }
 });

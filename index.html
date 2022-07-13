@@ -16,7 +16,7 @@
     <div class="container" id="root">
         <div id="carousel">
 
-            <i class="bi bi-arrow-left-circle-fill" id="prev"></i>
+            <i class="bi bi-arrow-left-circle-fill" id="prev" @click="goPrev"></i>
 
             <div class="gallery">
                 <figure v-for="(img, index) in pictures" :class="{'active' : currentIndex === index}">
@@ -28,7 +28,7 @@
                     </figure>
             </div>
 
-            <i class="bi bi-arrow-right-circle-fill" id="next"></i>
+            <i class="bi bi-arrow-right-circle-fill" id="next" @click="goNext"></i>
         </div>
 
         <div id="thumbnails">
